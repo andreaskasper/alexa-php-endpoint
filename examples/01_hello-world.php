@@ -7,5 +7,5 @@ require_once(__DIR__."/../src/Response.php");
 
 $r = new \Alexa\Endpoint\Response();
 
-$r->sayText("Hello World!");
+$r->say("Hello World!");
 $r->send();

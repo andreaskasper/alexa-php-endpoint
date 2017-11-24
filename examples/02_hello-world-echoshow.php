@@ -7,7 +7,7 @@ require_once(__DIR__."/../src/Response.php");
 
 $r = new \Alexa\Endpoint\Response();
 
-$r->sayText("Hello World!");
+$r->say("Hello World!");
 
 $b = new \Alexa\Endpoint\Directive\Image("https://placehold.it/1920x1080?text=Testy");
 

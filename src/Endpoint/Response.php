@@ -24,7 +24,7 @@ class Response {
 		$this->_sessionData[$key] = $value;
 	}
 	
-	public function sayText($txt) {
+	public function say($txt) {
 		$b = new Response\Speech();
 		$b->text($txt);
 		$this->addOutput($b);

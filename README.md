@@ -21,3 +21,9 @@ Build status: [![Build Status](https://travis-ci.org/andreaskasper/alexa-php-end
 ## "The response is invalid"
  - Falsch formatierte Response
  - AmazonEcho-Funktionalität vergessen zu aktivieren
+ 
+# Möchtest Du das Projekt unterstützen?
+Codewartung und -pflege kostet Zeit.
+Wenn Dir das Projekt gefällt und Du mithelfen möchtest, dass es weiter geht, dann hinterlasse doch ein kleines Trinkgeld :-)
+- https://www.patreon.com/AndreasKasper
+- https://www.paypal.me/AndreasKasper

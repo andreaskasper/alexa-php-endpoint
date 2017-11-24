@@ -1,8 +1,8 @@
 <?php
 
-namespace \Alexa\Endpoint;
+namespace Alexa\Endpoint;
 
-class AlexaResponse {
+class Response {
 	
 	private $_sessionEnd = true;
 	private $_dataoutputSpeech = null;

@@ -1,6 +1,6 @@
 <?php
 
-namespace \Alexa\Endpoint;
+namespace Alexa\Endpoint;
 
 class Request {
 	

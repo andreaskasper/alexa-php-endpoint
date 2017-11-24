@@ -12,3 +12,12 @@ Build status: [![Build Status](https://travis-ci.org/andreaskasper/alexa-php-end
 - [ ] Build tests
 - [ ] Gnomes
 - [ ] Profit
+
+# Typische Probleme
+## Der Service Simulator sagt: "The remote endpoint could not be called, or the response it returned was invalid."
+ - Testausgabe der "hallo welt" gibt eine Ausgabe?
+ - SSL-Zertifikat prüfen
+ 
+## "The response is invalid"
+ - Falsch formatierte Response
+ - AmazonEcho-Funktionalität vergessen zu aktivieren

@@ -14,7 +14,7 @@ final class AlexaResponseTest extends TestCase {
 	
 	public function testhelloworld01() {
 		try {
-			$w = new \Alexa\Endpoint\Response()
+			$w = new \Alexa\Endpoint\Response();
 			$w->say("Dies ist ein Test");
 			$w->send();
 			$this->assertEquals(true, true); //No Error, that it's a success

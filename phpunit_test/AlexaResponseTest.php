@@ -16,7 +16,7 @@ final class AlexaResponseTest extends TestCase {
 		try {
 			$w = new \Alexa\Endpoint\Response();
 			$w->say("Dies ist ein Test");
-			$w->send();
+			$w->send(false, false);
 			$this->assertEquals(true, true); //No Error, that it's a success
 		} catch (Exception $ex) {
 				$this->fail("Failed at helloworld01");

@@ -8,7 +8,7 @@ class Request {
 
 	public function __construct() {
 		$str = file_get_contents('php://input');
-		if ($str."" == "") throw new Exception("Vermutlich keine Alexa Anfrage");
+		if ($str."" == "") throw new \Exception("Vermutlich keine Alexa Anfrage");
 		$this->raw = json_decode($str,true);
 		@file_put_contents("test.log", var_export($this->raw,true), FILE_APPEND);
 	}
@@ -22,5 +22,21 @@ class Request {
 		return $this->raw["session"]["attributes"][$key];
 	}
 	
+	/**
+	  * return the parameters of the request
+	  *
+	  * @param string $key The Key of the parameters
+	  */
+	public function slotdata($key) {
+		if (!isset($this->raw["request"]["intent"]["slots"][$key]["value"])) return null;
+		return $this->raw["request"]["intent"]["slots"][$key]["value"];
+	}
+	
+	/**
+	  * The language of the request in format de-DE, en-US,...
+	  */
+	public function lang() {
+		return $this->raw["request"]["locale"];
+	}
 	
 }

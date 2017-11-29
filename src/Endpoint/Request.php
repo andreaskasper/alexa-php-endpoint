@@ -10,7 +10,6 @@ class Request {
 		$str = file_get_contents('php://input');
 		if ($str."" == "") throw new \Exception("Vermutlich keine Alexa Anfrage");
 		$this->raw = json_decode($str,true);
-		@file_put_contents("test.log", var_export($this->raw,true), FILE_APPEND);
 	}
 	
 	public function intent_name() {
@@ -37,6 +36,22 @@ class Request {
 	  */
 	public function lang() {
 		return $this->raw["request"]["locale"];
+	}
+	
+	/**
+	  * The language of the request in format de, en,...
+	  */
+	public function lang2() {
+		return strtolower(substr($this->lang(), 0, 2));
+	}
+	
+	/**
+	  * has the Echo a Display?
+	  */
+	public function hasDisplay() {
+		if (!isset($this->raw["context"]["System"]["device"]["supportedInterfaces"]["Display"])) return false; //Hat es ein Display
+		//TODO: Weitere Prüfungen
+		return true;
 	}
 	
 }

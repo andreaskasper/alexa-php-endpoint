@@ -10,10 +10,11 @@ class Response {
 	private $_responses = array();
 	private $_repromptText = null;
 	private $_directives = array();
+	public $request = null;
 	
 
-	public function __construct() {
-	
+	public function __construct($req = null) {
+		if (get_class($req) == "Request") $this->request = $req;
 	}
 	
 	public function SessionEnd(bool $value) {
@@ -22,6 +23,7 @@ class Response {
 	
 	public function setSessionValue($key, $value) {
 		$this->_sessionData[$key] = $value;
+		$this->_sessionEnd = false;
 	}
 	
 	public function say($txt) {
@@ -31,6 +33,10 @@ class Response {
 	}
 	
 	public function addOutput(Response\template $obj) {
+		$this->_responses[] = $obj;
+	}
+	
+	public function addResponse(Response\template $obj) {
 		$this->_responses[] = $obj;
 	}
 	
@@ -87,7 +93,7 @@ class Response {
 			header("Content-Type: application/json;charset=UTF-8");
 			header("Content-Length: ".strlen($out));
 		}
-		echo($out);
+		echo(str_replace("\/","/",$out));
 		if ($exitafter) exit(1);
 	}
 	
